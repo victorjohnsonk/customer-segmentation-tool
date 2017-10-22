@@ -4,7 +4,7 @@ from sklearn.cluster import KMeans
 
 
 def preprocess_data(df):
-    df = df.copy()
+    df = df.copy().reset_index(drop=True)
     # Encode Gender (Male=1, Female=0)
     label_encoder = LabelEncoder()
     df['Gender'] = label_encoder.fit_transform(df['Gender'])
@@ -14,13 +14,13 @@ def preprocess_data(df):
     # Scale features
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)   
-    return X_scaled
+    return X_scaled, df, scaler, label_encoder
 
 
 def run_kmeans(df, n_clusters=5, random_state=42):
-    X_scaled = preprocess_data(df)
+    X_scaled, processed_df, scaler, label_encoder = preprocess_data(df)
     kmeans = KMeans(n_clusters=n_clusters, random_state=random_state)
     kmeans.fit(X_scaled)
-    df_clustered = df.copy()
-    df_clustered['Cluster'] = kmeans.labels_
-    return df_clustered, kmeans
+    processed_df['Cluster'] = kmeans.labels_
+    return processed_df, kmeans
+
