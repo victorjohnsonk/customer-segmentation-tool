@@ -1,0 +1,14 @@
+﻿# Ignore Python cache and temporary files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore data outputs
+data/*.csv
+
+# Ignore notebooks checkpoints
+notebooks/.ipynb_checkpoints/
+
+# Ignore virtual environments
+venv/
+.env/
