@@ -1,11 +1,11 @@
-Customer Segmentation Tool
+# Customer Segmentation Tool
 
 This project segments customers using K-Means clustering and PCA (Principal Component Analysis).
 It generates synthetic customer data, runs clustering, and shows results as an interactive scatter plot using Plotly.
 
 ---
 
-Features
+## Features
 
 - Generate sample customer data
 - Perform K-Means clustering
@@ -15,47 +15,47 @@ Features
 
 ---
 
-Requirements
+## Requirements
 
 Python 3.6 or later
 
 Install dependencies using:
-pip install -r requirements.txt
+````pip install -r requirements.txt````
 
 ---
 
-How to Run
+## How to Run
 
 From the main project folder, run:
-python -m src.main --clusters 5
+````python -m src.main --clusters 5````
 
-This will:
+### This will:
 
 1. Generate synthetic data
 2. Perform clustering
 3. Apply PCA
-4. Save the plot to: data/customer_clusters_5.html
+4. Save the plot to: ````data/customer_clusters_5.html````
 
 Open that HTML file in your browser to view the interactive chart.
 
 ---
 
-Jupyter Notebook
+## Jupyter Notebook
 
 To explore the dataset and clustering visually:
-jupyter notebook notebooks/exploratory_analysis.ipynb
+````jupyter notebook notebooks/exploratory_analysis.ipynb````
 
 ---
 
-Running Tests
+## Running Tests
 
 To verify everything works, run:
-python -m unittest discover -s tests
+````python -m unittest discover -s tests````
 
 ---
 
-Project Structure
-
+## Project Structure
+````
 customer-segmentation-tool/
 data/
 notebooks/
@@ -70,7 +70,7 @@ test_data_generator.py
 test_clustering.py
 requirements.txt
 README.md
-
+````
 ---
 
 Notes
